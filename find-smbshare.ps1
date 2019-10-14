@@ -2,7 +2,19 @@ function find-smbshare {
                     
                             param ([string]$server )
 
-begin {$ct=Test-Connection  -Count 1 -Quiet  -computername $server
+begin {
+        Add-Type -Language CSharp @"
+        public class smbshare{
+        public string name;
+        public string type;
+        public string host;
+        public string path;
+}
+"@
+
+
+
+        $ct=Test-Connection  -Count 1 -Quiet  -computername $server
         
                
             }#end begin
@@ -16,11 +28,11 @@ process{if (!$ct) {Write-Error ('computer unavalible: '+$server)
         $re|%{$split=$_.split(';') #split and make obj if server is available
               $sharename=$split[0]
               $sharetype=$split[1]
-              $smb_ob=New-Object -TypeName psobject 
-              $smb_ob|Add-Member -MemberType NoteProperty -Name 'name' -Value $sharename -PassThru|
-              Add-Member -MemberType NoteProperty -Name 'type' -Value $sharetype -PassThru | 
-              Add-Member -MemberType NoteProperty -Name 'host' -Value $server -PassThru|
-              Add-Member -MemberType NoteProperty -Name 'path' -Value ('\\'+$server+'\'+$sharename)
+              $smb_ob=New-Object -TypeName smbshare 
+              $smb_ob.host= $server
+              $smb_ob.name=$sharename
+              $smb_ob.path=('\\'+$server+'\'+$sharename)
+              $smb_ob.type=$sharetype
               Write-Output $smb_ob
              }
                 
