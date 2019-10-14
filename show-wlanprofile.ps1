@@ -1,11 +1,5 @@
 
-<#
-ToDo:
-make properties from wlan profile #done
-make it into a function #DONE!
-Create some usefull innputt parameters
 
-#>
  
 function show-wlanprofile { 
                     
