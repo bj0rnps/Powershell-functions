@@ -1,3 +1,4 @@
+#smb finder
 function find-smbshare { 
                     
                             param ([string]$server )
@@ -22,6 +23,7 @@ process{if (!$ct) {Write-Error ('computer unavalible: '+$server)
                     }
         if($ct){
         $smb=net.exe view $server
+        $smb=$smb[7..($smb.count-3)]
         $mat=$smb -match "\s{3,}"#filter out junk
         $re=$mat -replace "\s+",";"#ready for split
         
@@ -43,3 +45,4 @@ process{if (!$ct) {Write-Error ('computer unavalible: '+$server)
 }#end process
 
 }#end func
+
