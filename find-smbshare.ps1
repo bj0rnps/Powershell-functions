@@ -15,7 +15,7 @@ begin {
 
 
 
-        $ct=Test-Connection  -Count 1 -Quiet  -computername $server
+        [void]$ct=Test-Connection  -Count 1 -Quiet  -computername $server
         
                
             }#end begin
