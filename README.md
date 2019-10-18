@@ -1,6 +1,20 @@
 # Powershell-functions
 simple network related Powershell functions
 
+## show-wlanprofile :
+returns all wlan profiles
+```
+ show-wlanprofile
+
+
+SSID name       : networkssid
+Network Type    : Infrastructure
+Key Content     : N/A
+Connection mode : Connect manually
+Authentication  : WPA2-Personal
+
+```
+
 
 
 ## show-wlaninterface :
@@ -40,16 +54,3 @@ J         Disk server \\server\J
 K         Disk server \\server\K
 Tegninger Disk server \\server\Tegninger
 ```
-## show-wlanprofile : 
-```
- show-wlanprofile
-
-
-SSID name       : networkssid
-Network Type    : Infrastructure
-Key Content     : N/A
-Connection mode : Connect manually
-Authentication  : WPA2-Personal
-
-```
-
