@@ -18,7 +18,7 @@ Authentication  : WPA2-Personal
 
 
 ## show-wlaninterface :
-
+Returns wlaninterface settings
 ```
 show-wlaninterface
 
@@ -43,6 +43,7 @@ Profile               : xxxxxx
 Hosted network status : Not available
 ```
 ## find-smbshare :
+Returns Shares smb shares from target server
 
 ```
 find-smbshare -server server
