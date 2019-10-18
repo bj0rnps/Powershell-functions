@@ -43,7 +43,7 @@ Profile               : xxxxxx
 Hosted network status : Not available
 ```
 ## find-smbshare :
-Returns Shares smb shares from target server
+Returns SMB shares from target server
 
 ```
 find-smbshare -server server
