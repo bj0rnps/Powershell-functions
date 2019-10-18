@@ -1,7 +1,7 @@
 # Powershell-functions
 simple network related Powershell functions
 
-Welcome to the Powershell-functions wiki
+
 
 ## show-wlaninterface :
 
