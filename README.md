@@ -2,7 +2,7 @@
 simple network related Powershell functions
 
 ## show-wlanprofile :
-returns all wlan profiles
+Returns all wlan profiles whit key content if present
 ```
  show-wlanprofile
 
