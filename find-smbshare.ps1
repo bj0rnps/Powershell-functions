@@ -27,7 +27,7 @@ process{if (!$ct) {Write-Error ('computer unavalible: '+$server)
         $mat=$smb -match "\s{3,}"#filter out junk
         $re=$mat -replace "\s+",";"#ready for split
         
-        $re|%{$split=$_.split(';') #split and make obj if server is available
+        $re.foreach{ {$split=$_.split(';') #split and make obj if server is available
               $sharename=$split[0]
               $sharetype=$split[1]
               $smb_ob=New-Object -TypeName smbshare 
