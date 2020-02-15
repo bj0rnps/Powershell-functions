@@ -1,26 +1,9 @@
-# Powershell-functions
-simple network related Powershell functions
+Welcome to the Powershell-functions wiki
 
-## show-wlanprofile :
-Returns all wlan profiles whit key content if present
-```
- show-wlanprofile
-
-
-SSID name       : networkssid
-Network Type    : Infrastructure
-Key Content     : N/A
-Connection mode : Connect manually
-Authentication  : WPA2-Personal
+## Show-Wlaninterface :
 
 ```
-
-
-
-## show-wlaninterface :
-Returns wlaninterface settings
-```
-show-wlaninterface
+Show-Wlaninterface
 
 
 Name                  : Wi-Fi
@@ -42,11 +25,10 @@ Signal                : 86%
 Profile               : xxxxxx
 Hosted network status : Not available
 ```
-## find-smbshare :
-Returns SMB shares from target server
+## Find-Smbshare :
 
 ```
-find-smbshare -server server
+Find-Smbshare -server server
 
 name      type host   path
 ----      ---- ----   ----
@@ -54,4 +36,27 @@ I         Disk server \\server\I
 J         Disk server \\server\J
 K         Disk server \\server\K
 Tegninger Disk server \\server\Tegninger
+```
+## Show-Wlanprofile : 
+```
+ Show-Wlanprofile
+
+
+SSID name       : networkssid
+Network Type    : Infrastructure
+Key Content     : N/A
+Connection mode : Connect manually
+Authentication  : WPA2-Personal
+
+```
+## Get-Smb1status
+
+
+```
+Get-Smb1status
+
+SMB1Protocol SMB1Protocol_Client SMB1Protocol_Server SMB1Protocol_Deprecation
+------------ ------------------- ------------------- ------------------------
+Enabled      Enabled             Disabled            Disabled
+
 ```
