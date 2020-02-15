@@ -2,7 +2,7 @@
 #
 #
 #
-function get-smbstatus{
+function get-smb1status{
 
 
 begin{
