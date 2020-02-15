@@ -25,9 +25,9 @@ $smb | foreach{
                                                                           
               $split=($_.split('|')).trim().replace('-','_') #remove whitespace replace char to match class prop
               $obj.($split[0])=$split[1]
-              Write-Output $obj
+              
               }#end foreach smb
-                                                                          
+              Write-Output $obj                                                            
 
 
 
