@@ -21,7 +21,7 @@ process{
 $obj=New-Object -TypeName smb_1
 $smb=Dism /online /Get-Features /format:table |where {$_ -like "*smb1P*"}
                                                             
-$smb | foreach{
+$smb.foreach{
                                                                           
               $split=($_.split('|')).trim().replace('-','_') #remove whitespace replace char to match class prop
               $obj.($split[0])=$split[1]
