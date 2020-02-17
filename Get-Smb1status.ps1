@@ -48,7 +48,7 @@ $smb.foreach{
                             3 {$state="Absent" ; Break }
                             4 {$state="Unknown" ; Break }
                             
-                            }#end switch    
+                             }#end switch    
           
                  $obj.$name=$state
                  
