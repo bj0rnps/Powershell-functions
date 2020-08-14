@@ -39,7 +39,7 @@ process{
                                        $profiles+=$profile_obj
                         }
 
-                        $profiles
+                       write-output $profiles
                         
 
 }#end process
