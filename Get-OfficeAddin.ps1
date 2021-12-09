@@ -19,18 +19,18 @@ $office_programs='Outlook','PowerPoint','Excel','Word'
 $addin_col=@()
 #function Get-OfficeAddin{
 
-$office_programs|%{
+$office_programs|ForEach-Object{
 $program=$_
 
 
-$addins=ls ('HKCU:\SOFTWARE\Microsoft\office\'+$program+'\Addins')
+$addins=Get-ChildItem ('HKCU:\SOFTWARE\Microsoft\office\'+$program+'\Addins')
 
-$addins|%{
+$addins|ForEach-Object {
 
 $addin_obj=New-Object -TypeName office_addin
 
 $addin=$_.Name.replace('HKEY_CURRENT_USER','HKCU:')|%{(Get-ItemProperty $_)}
-$addin|%{ #remove foreach
+$addin|ForEach-Object{ 
 
 #load behavior
 $loadbehavior=$_.loadbehavior
@@ -55,7 +55,7 @@ $loadbehavior=$_.loadbehavior
 }#remove foreach
 
 
-$DoNotDisableAddinListPath="hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Resiliency\DoNotDisableAddinList"
+#$DoNotDisableAddinListPath="hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Resiliency\DoNotDisableAddinList" to be added
 
 if  ( (Get-ItemProperty "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Resiliency\DoNotDisableAddinList").($addin.PSChildName)) { 
                                                                                                                                 $donotdisable=$true
