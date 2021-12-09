@@ -43,6 +43,6 @@ process{if (!$ct) {Write-Error ('computer unavalible: '+$server)
 
 
 }#end process
-
+        }#end if
 }#end func
 
