@@ -21,8 +21,8 @@ function Disable-OptionalFeature ([string]$name){
 
 function Get-OptionalFeature {
 
-$win32_optionalfeature= Get-WmiObject -query "select * from win32_optionalfeature "|select name,installstate
-$win32_optionalfeature|%{
+$win32_optionalfeature= Get-WmiObject -query "select * from win32_optionalfeature "|Select-Object name,installstate
+$win32_optionalfeature|ForEach-Object{
                $state=$_.installstate
                switch ($state)
                             {
@@ -37,7 +37,7 @@ $_.installstate=$state
 $win32_optionalfeature+=$_          
 } 
  
-$win32_optionalfeature|where {$_.installstate -ne [int]}
+$win32_optionalfeature|Where-Object {$_.installstate -ne [int]}
  
  
  }                               
