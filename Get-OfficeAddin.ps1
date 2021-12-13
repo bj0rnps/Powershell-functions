@@ -50,7 +50,6 @@ $loadbehavior=$_.loadbehavior
                                                                                      
    16{$loadbehavior='Load first time, then load on demand'; $lastloadstate='Loaded'    } #16 ;	Loaded ;	Load first time, then load on demand
 
-}
 
 }#remove foreach
 
