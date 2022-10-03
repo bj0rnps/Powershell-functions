@@ -15,6 +15,8 @@ public string FriendlyName;
 "@
 
 
+
+
 $office_programs='Outlook','PowerPoint','Excel','Word'
 $addin_col=@()
 #function Get-OfficeAddin{
@@ -78,4 +80,5 @@ $addin_col+=$addin_obj
 }
 
 Write-Output $addin_col
+}
 }
